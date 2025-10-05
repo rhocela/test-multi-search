@@ -21,8 +21,13 @@ export default function SearchBar(props) {
     
     let newScope = 'all';
     
-    // Check for user guide (more flexible matching)
-    if (path.includes('user-guide')) {
+    // Check for user guide - look for specific user guide categories and pages
+    if (path.includes('user-guide') || 
+        path.includes('/get-started') || 
+        path.includes('/manage-datasets') || 
+        path.includes('/manage-organisations') || 
+        path.includes('/manage-roles') || 
+        path.includes('/manage-vocabularies')) {
       newScope = 'user-guide';
     } 
     // Check for system admin guide
