@@ -1,0 +1,10 @@
+{
+  "label": "Manage roles",
+  "position": 5,
+  "description": "Control user permissions and access within Metadata Capture to ensure secure and dataset management",
+  "link": {
+    "type": "generated-index",
+    "description": "Control user permissions and access within Metadata Capture to ensure secure and dataset management."
+  }
+}
+ 

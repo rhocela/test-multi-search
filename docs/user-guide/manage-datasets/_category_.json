@@ -1,0 +1,9 @@
+{
+  "label": "Manage datasets",
+  "position": 3,
+  "description": "Manage datasets throughout their lifecycle from creation to publication and deprecation",
+  "link": {
+    "type": "generated-index",
+    "description": "Manage datasets throughout their lifecycle from creation to publication and deprecation."
+  }
+}
