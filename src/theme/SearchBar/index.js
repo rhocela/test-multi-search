@@ -6,6 +6,9 @@ export default function SearchBar(props) {
   const location = useLocation();
   const [currentScope, setCurrentScope] = useState('all');
 
+  // Add a console log to confirm this component is rendering
+  console.log('🔍 Custom SearchBar component is rendering!');
+
   useEffect(() => {
     // Determine current scope based on the URL path
     const path = location.pathname;
@@ -38,6 +41,11 @@ export default function SearchBar(props) {
 
   return (
     <div className={`search-wrapper search-scope-${currentScope}`}>
+      {/* Always show debug info for now */}
+      <div style={{fontSize: '10px', color: 'red', marginBottom: '2px'}}>
+        DEBUG: Scope={currentScope}, Path={location.pathname}
+      </div>
+      
       {currentScope !== 'all' && (
         <div className="search-scope-indicator">
           <small>Searching in: {currentScope.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</small>
