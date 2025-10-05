@@ -23,11 +23,6 @@ export default function Home() {
         <div className="container">
           <h1 className="hero__title">Welcome to Metadata Capture</h1>
           <p className="hero__subtitle">Your tool for managing and sharing datasets</p>
-          <div>
-            <Link className="button button--primary button--lg" to="/intro">
-              Get started
-            </Link>
-          </div>
         </div>
       </header>
       <main className={styles.mainPaddingBottom}>

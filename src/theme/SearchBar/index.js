@@ -116,18 +116,28 @@ export default function SearchBar() {
     setQuery('');
   };
 
+  // Generate placeholder text based on current scope
+  const getPlaceholderText = () => {
+    switch (currentScope) {
+      case 'all':
+        return 'Search all documentation';
+      case 'user-guide':
+        return 'Search user guide';
+      case 'system-admin-guide':
+        return 'Search system admin guide';
+      case 'developer-guide':
+        return 'Search developer guide';
+      default:
+        return 'Search documentation';
+    }
+  };
+
   return (
-    <div className={`custom-search-wrapper search-scope-${currentScope}`} ref={searchRef}>
-      {currentScope !== 'all' && (
-        <div className="search-scope-indicator">
-          <small>Searching in: {currentScope.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</small>
-        </div>
-      )}
-      
+    <div className={`custom-search-wrapper search-scope-${currentScope}`} ref={searchRef}>      
       <div className="search-input-wrapper">
         <input
           type="search"
-          placeholder={`Search ${currentScope === 'all' ? 'documentation' : currentScope.replace('-', ' ')}... Ctrl+K`}
+          placeholder={getPlaceholderText()}
           value={query}
           onChange={handleSearch}
           onKeyDown={handleKeyDown}
