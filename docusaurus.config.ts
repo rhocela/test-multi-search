@@ -10,15 +10,14 @@ const config: Config = {
   favicon: "img/favicon.svg",
 
   // Set the production url of your site here
-  url: process.env.DOCS_URL || "https://your-docusaurus-site.example.com",
+  url: "https://rhocela.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
-  // Use environment variable to support both app hosting (/docs/) and GitLab Pages (/)
-  baseUrl: process.env.DOCS_BASE_URL || "/docs/",
+  // For GitHub Pages deployment, this should be the repository name
+  baseUrl: "/test-multi-search/",
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "lnds-lu/", // Usually your GitHub org/user name.
-  projectName: "dca-metadata-capture", // Usually your repo name.
+  organizationName: "rhocela", // Your GitHub username
+  projectName: "test-multi-search", // Your repository name
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
