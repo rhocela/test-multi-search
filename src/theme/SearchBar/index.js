@@ -10,19 +10,29 @@ export default function SearchBar(props) {
     // Determine current scope based on the URL path
     const path = location.pathname;
     
-    console.log('Current path:', path); // Debug logging
+    console.log('=== SearchBar Debug ===');
+    console.log('Current path:', path);
+    console.log('Contains /user-guide:', path.includes('/user-guide'));
+    console.log('Contains /category/user-guide:', path.includes('/category/user-guide'));
+    console.log('Contains user-guide anywhere:', path.includes('user-guide'));
     
     let newScope = 'all';
     
-    if (path.includes('/user-guide') || path.includes('/category/user-guide')) {
+    // Check for user guide (more flexible matching)
+    if (path.includes('user-guide')) {
       newScope = 'user-guide';
-    } else if (path.includes('/system-admin-guide') || path.includes('/category/system-admin-guide')) {
+    } 
+    // Check for system admin guide
+    else if (path.includes('system-admin-guide')) {
       newScope = 'system-admin-guide';
-    } else if (path.includes('/developer-guide') || path.includes('/category/developer-guide')) {
+    } 
+    // Check for developer guide
+    else if (path.includes('developer-guide')) {
       newScope = 'developer-guide';
     }
     
-    console.log('Setting scope to:', newScope); // Debug logging
+    console.log('Setting scope to:', newScope);
+    console.log('=======================');
     setCurrentScope(newScope);
   }, [location.pathname]);
 
