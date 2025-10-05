@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from '@docusaurus/router';
 import OriginalSearchBar from '@theme-original/SearchBar';
-import { useScopedSearch } from '../../hooks/useScopedSearch';
 
 export default function SearchBar(props) {
   const location = useLocation();
   const [currentScope, setCurrentScope] = useState('all');
-
-  // Use the scoped search hook
-  useScopedSearch();
 
   useEffect(() => {
     // Determine current scope based on the URL path

@@ -37,32 +37,15 @@ const config: Config = {
     [
       require.resolve("docusaurus-lunr-search"),
       {
-        // Configure the search to include metadata for scoping
+        // Enable the search plugin
+        languages: ['en'],
         indexBaseUrl: true,
         includeRoutes: [
-          '/user-guide/**',
-          '/system-admin-guide/**', 
-          '/developer-guide/**',
-          '/category/**',
-          '/intro',
-          '/'
+          '/**',
         ],
-        // Add custom fields for scoping
-        customFields: [
-          {
-            name: 'scope',
-            resolver: (doc) => {
-              if (doc.route.includes('/user-guide') || doc.route.includes('/category/user-guide')) {
-                return 'user-guide';
-              } else if (doc.route.includes('/system-admin-guide') || doc.route.includes('/category/system-admin-guide')) {
-                return 'system-admin-guide';
-              } else if (doc.route.includes('/developer-guide') || doc.route.includes('/category/developer-guide')) {
-                return 'developer-guide';
-              }
-              return 'general';
-            }
-          }
-        ]
+        excludeRoutes: [
+          '/search/**',
+        ],
       }
     ]
   ],
@@ -117,6 +100,8 @@ const config: Config = {
         },
       ],
     },
+    // Add search configuration
+    algolia: undefined, // Disable algolia if it's configured
     footer: {
       style: "dark",
       links: [
