@@ -10,15 +10,20 @@ export default function SearchBar(props) {
     // Determine current scope based on the URL path
     const path = location.pathname;
     
+    console.log('Current path:', path); // Debug logging
+    
+    let newScope = 'all';
+    
     if (path.includes('/user-guide') || path.includes('/category/user-guide')) {
-      setCurrentScope('user-guide');
+      newScope = 'user-guide';
     } else if (path.includes('/system-admin-guide') || path.includes('/category/system-admin-guide')) {
-      setCurrentScope('system-admin-guide');
+      newScope = 'system-admin-guide';
     } else if (path.includes('/developer-guide') || path.includes('/category/developer-guide')) {
-      setCurrentScope('developer-guide');
-    } else {
-      setCurrentScope('all');
+      newScope = 'developer-guide';
     }
+    
+    console.log('Setting scope to:', newScope); // Debug logging
+    setCurrentScope(newScope);
   }, [location.pathname]);
 
   return (
