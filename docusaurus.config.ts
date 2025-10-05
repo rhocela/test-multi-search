@@ -33,22 +33,7 @@ const config: Config = {
     mermaid: true,
   },
   themes: ["@docusaurus/theme-mermaid"],
-  plugins: [
-    [
-      require.resolve("docusaurus-lunr-search"),
-      {
-        // Enable the search plugin
-        languages: ['en'],
-        indexBaseUrl: true,
-        includeRoutes: [
-          '/**',
-        ],
-        excludeRoutes: [
-          '/search/**',
-        ],
-      }
-    ]
-  ],
+  plugins: [],
 
   presets: [
     [
