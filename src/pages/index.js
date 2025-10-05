@@ -34,7 +34,7 @@ export default function Home() {
                 <div className={styles.homeCard}>
                   <img src="img/im-a-user-people.svg" alt="User icon" style={{ width: 100, height: 100, marginBottom: 12 }} />
                     <h3>
-                      <Link to="/category/user-guide">
+                      <Link to="/category/get-started-1">
                         I'm a user
                       </Link>
                     </h3>
@@ -46,7 +46,7 @@ export default function Home() {
                 <div className={styles.homeCard}>
                   <img src="img/im-a-system-admin-server.svg" alt="System Admin icon" style={{ width: 100, height: 100, marginBottom: 12 }} />
                       <h3>
-                      <Link to="/category/system-admin-guide">
+                      <Link to="/system-admin-guide/architecture-overview">
                         I'm a system admin
                       </Link>
                     </h3>
@@ -60,7 +60,7 @@ export default function Home() {
                 <div className={styles.homeCard}>
                   <img src="img/im-a-developer-puzzle.svg" alt="User icon" style={{ width: 100, height: 100, marginBottom: 12 }} />
                       <h3>
-                      <Link to="/category/developer-guide">
+                      <Link to="/developer-guide/set-up-a-developer-environment">
                         I'm a developer
                       </Link>
                     </h3>
